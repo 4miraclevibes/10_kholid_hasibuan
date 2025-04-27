@@ -16,13 +16,19 @@ class Transaction extends Model
         'status',
     ];
 
-    public function registrations()
+    public function registration()
     {
-        return $this->hasMany(Registration::class);
+        return $this->belongsTo(Registration::class);
     }
 
-    public function employees()
+    public function employee()
     {
-        return $this->hasMany(Employee::class);
+        return $this->belongsTo(Employee::class);
     }
+
+    public function transactionDetail()
+    {
+        return $this->hasMany(TransactionDetail::class);
+    }
+
 }

@@ -47,12 +47,6 @@
                     </li>
                     <li>
                     <li>
-                      <a class="dropdown-item" href="{{ route('user.edit', Auth::user()->id) }}">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">Edit User Detail</span>
-                      </a>
-                    </li>
-                    <li>
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>

@@ -12,6 +12,8 @@ use App\Http\Controllers\EmploymentController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\TransactionDetailController;
+use App\Http\Controllers\ReportController;
 
 
 Route::get('/', function () {
@@ -90,8 +92,17 @@ Route::middleware('auth')->group(function () {
     // routes/web.php
     Route::resource('transactions', TransactionController::class);
     Route::resource('registrations', RegistrationController::class);
+    Route::prefix('transactions/{transaction}/details')->name('transactions.details.')->group(function () {
+        Route::get('/', [TransactionDetailController::class, 'index'])->name('index');
+        Route::get('/create', [TransactionDetailController::class, 'create'])->name('create');
+        Route::post('/', [TransactionDetailController::class, 'store'])->name('store');
+        Route::get('/{detail}/edit', [TransactionDetailController::class, 'edit'])->name('edit');
+        Route::put('/{detail}', [TransactionDetailController::class, 'update'])->name('update');
+        Route::delete('/{detail}', [TransactionDetailController::class, 'destroy'])->name('destroy');
+    });
 
-    
+    Route::get('/report/registrations', [ReportController::class, 'reportRegistrations'])->name('report.registrations');
+    Route::get('/report/revenue', [ReportController::class, 'reportRevenue'])->name('report.revenue');
 });
 
 require __DIR__.'/auth.php';

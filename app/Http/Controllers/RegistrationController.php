@@ -6,6 +6,7 @@ use App\Models\Registration;
 use App\Models\Patient;
 use App\Models\PatientCategory;
 use App\Models\Employee;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class RegistrationController extends Controller
     {
         $patients = Patient::all();
         $patientCategories = PatientCategory::all();
-        $employees = Employee::all();
+        $employees = Employee::where('id', Auth::user()->id)->get();
         $rooms = Room::all();
         return view('registrations.create', compact('patients', 'patientCategories', 'employees', 'rooms'));
     }
@@ -57,7 +58,7 @@ class RegistrationController extends Controller
         $registration = Registration::findOrFail($id);
         $patients = Patient::all();
         $patientCategories = PatientCategory::all();
-        $employees = Employee::all();
+        $employees = Employee::where('id', Auth::user()->id)->get();
         $rooms = Room::all();
 
         return view('registrations.edit', compact('registration', 'patients', 'patientCategories', 'employees', 'rooms'));

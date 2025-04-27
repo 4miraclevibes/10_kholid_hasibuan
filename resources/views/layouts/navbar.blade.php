@@ -87,15 +87,36 @@
               </a>
             </li>
 
-                <!-- Registration Management -->
-    <li class="menu-item {{ Route::is('registrations*') ? 'active' : '' }}">
-      <a href="{{ route('registrations.index') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-calendar"></i>
-          <div>Pendaftaran</div>
-      </a>
-  </li>
+            <!-- Registration Management -->
+            <li class="menu-item {{ Route::is('registrations*') ? 'active' : '' }}">
+              <a href="{{ route('registrations.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-calendar"></i>
+                  <div>Pendaftaran</div>
+              </a>
+            </li>
 
+          <!-- Transaction Management -->
+          <li class="menu-item {{ Route::is('transactions*') ? 'active' : '' }}">
+            <a href="{{ route('transactions.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-receipt"></i>
+                <div>Transaksi</div>
+            </a>
+          </li>
+<!-- Laporan Pendaftaran Pasien -->
+<li class="menu-item {{ Route::is('report.registrations') ? 'active' : '' }}">
+  <a href="{{ route('report.registrations') }}" class="menu-link">
+    <i class="menu-icon tf-icons bx bx-file"></i>
+    <div>Laporan Pendaftaran Pasien</div>
+  </a>
+</li>
 
-            </ul>
+<!-- Laporan Pendapatan -->
+<li class="menu-item {{ Route::is('report.revenue') ? 'active' : '' }}">
+  <a href="{{ route('report.revenue') }}" class="menu-link">
+    <i class="menu-icon tf-icons bx bx-file"></i>
+    <div>Laporan Pendapatan</div>
+  </a>
+</li>
+          </ul>
           </aside>
           <!-- / Menu -->

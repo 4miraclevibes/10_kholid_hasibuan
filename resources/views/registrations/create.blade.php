@@ -59,12 +59,7 @@
                             <label for="date" class="form-label">Tanggal Pendaftaran</label>
                             <input type="date" name="date" class="form-control" required>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="status" class="form-label">Status</label>
-                            <input type="text" name="status" class="form-control" required>
-                        </div>
-
+                        
                         <div class="mb-3">
                             <label for="is_inpatient" class="form-label">Rawat Inap</label>
                             <select name="is_inpatient" class="form-control" required>

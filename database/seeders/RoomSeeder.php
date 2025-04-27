@@ -14,6 +14,10 @@ class RoomSeeder extends Seeder
     {
         $rooms = [
             [
+                'name' => 'Rajal',
+                'price' => 0,
+            ],
+            [
                 'name' => 'Kelas 1',
                 'price' => 100000,
             ],

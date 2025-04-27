@@ -17,7 +17,6 @@ class Patient extends Model
         'village_id',
         'education_id',
         'employment_id',
-        'nrm',
         'name',
         'address',
         'birth_place',

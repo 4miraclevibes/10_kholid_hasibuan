@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignId('village_id')->constrained('indonesia_villages');
             $table->foreignId('education_id')->constrained('education');
             $table->foreignId('employment_id')->constrained('employments');
-            $table->string('nrm');
             $table->string('name');
             $table->string('address');
             $table->string('birth_place');
