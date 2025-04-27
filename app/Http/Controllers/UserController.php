@@ -78,10 +78,10 @@ class UserController extends Controller
     public function edit(string $id)
     {
         if(Auth::user()->employee->role->name == 'admin'){
-            $item = User::find($id);
+            $item = User::where('id', $id)->with('employee')->first();
             $data = Role::whereNot('id', $item->employee->role->id)->get();
         } else {
-            $item = User::find(Auth::user()->id);
+            $item = User::where('id', $id)->with('employee')->first();
             $data = Role::whereNot('id', Auth::user()->employee->role->id)->get();
         }
         return view('user.edit', [

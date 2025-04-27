@@ -34,8 +34,8 @@
           <div class="col-sm-10">
             <select class="form-select" name="role_id" id="exampleFormControlSelect1" aria-label="Default select example">
               <option value="{{ $item->employee->role->id }}">{{ $item->employee->role->name }}</option>
-              @foreach ($data as $item)
-              <option value="{{ $item->id }}">{{ $item->name }}</option>
+              @foreach ($data as $it)
+              <option value="{{ $it->id }}">{{ $it->name }}</option>
               @endforeach
             </select>
           </div>
