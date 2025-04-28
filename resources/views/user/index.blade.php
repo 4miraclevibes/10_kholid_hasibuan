@@ -27,8 +27,8 @@
             <td>{{ $item->name }}</td>
             <td>{{ $item->email }}</td>
             <td>{{ $item->employee->phone ?? '' }}</td>
-            <td>{{ $item->employee->address }}</td>
-            <td>{{ $item->employee->role->name }}</td>
+            <td>{{ $item->employee->address ?? '' }}</td>
+            <td>{{ $item->employee->role->name ?? '' }}</td>
             <td>
               <div class="dropdown">
                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
