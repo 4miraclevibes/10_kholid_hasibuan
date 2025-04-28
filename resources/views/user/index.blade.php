@@ -26,7 +26,7 @@
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $item->name }}</td>
             <td>{{ $item->email }}</td>
-            <td>{{ $item->employee->phone }}</td>
+            <td>{{ $item->employee->phone ?? '' }}</td>
             <td>{{ $item->employee->address }}</td>
             <td>{{ $item->employee->role->name }}</td>
             <td>
