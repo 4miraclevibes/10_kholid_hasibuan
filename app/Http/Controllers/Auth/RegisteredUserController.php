@@ -19,6 +19,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
+        dd('Daftar via akun dashboard, gunakan akun seeder untuk di awal, cek di seeder');
         return view('auth.register');
     }
 
